@@ -11,5 +11,5 @@ phases:
       - mvn package
 artifacts:
   files:
-    - target/web-demo-0.0.1-SNAPSHOT.jar
+    - target/demoforcicd-1.0-SNAPSHOT.jar
   discard-paths: yes
