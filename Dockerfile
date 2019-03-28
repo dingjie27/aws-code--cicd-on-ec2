@@ -1,4 +1,4 @@
-FROM Ubuntu 14.04
+FROM aws/codebuild/java:openjdk-11
 MAINTAINER Jie
 LABEL app="demo" version="0.0.1" by="Jie"
 COPY ./demoforcicd-1.0-SNAPSHOT.jar demoforcicd-1.0-SNAPSHOT.jar
