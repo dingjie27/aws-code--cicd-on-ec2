@@ -1,14 +1,20 @@
 version: 0.2
 
 phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --no-include-email --region us-east-1)
   build:
     commands:
       - echo Build started on `date`
-      - mvn test 
+      - mvn test
+      - docker build -t javademo .
+      - docker tag javademo:latest 687804506828.dkr.ecr.us-east-1.amazonaws.com/javademo:latest
   post_build:
     commands:
       - echo Build completed on `date`
-      - mvn package
+      - docker push 687804506828.dkr.ecr.us-east-1.amazonaws.com/javademo:latest
 artifacts:
   files:
     - target/demoforcicd-1.0-SNAPSHOT.jar
