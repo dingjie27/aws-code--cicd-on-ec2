@@ -22,4 +22,3 @@ artifacts:
     - target/demoforcicd-1.0-SNAPSHOT.jar
     - appspec.yml
     - /scripts/*
-  discard-paths: yes
