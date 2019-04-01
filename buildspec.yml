@@ -3,6 +3,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - sudo su
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --no-include-email --region us-east-1)
   build:
