@@ -9,6 +9,8 @@ phases:
     commands:
       - echo Build started on `date`
       - mvn test
+      - mvn package
+      - echo  start docker...
       - docker build -t javademo .
       - docker tag javademo:latest 687804506828.dkr.ecr.us-east-1.amazonaws.com/javademo:latest
   post_build:
