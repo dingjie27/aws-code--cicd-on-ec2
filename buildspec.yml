@@ -12,12 +12,12 @@ phases:
       - mvn test
       - mvn package
       - echo  start docker...
-      - docker build -t javademo .
-      - docker tag javademo:latest 687804506828.dkr.ecr.us-east-1.amazonaws.com/javademo:latest
+      - su docker build -t javademo .
+      - su docker tag javademo:latest 687804506828.dkr.ecr.us-east-1.amazonaws.com/javademo:latest
   post_build:
     commands:
       - echo Build completed on `date`
-      - docker push 687804506828.dkr.ecr.us-east-1.amazonaws.com/javademo:latest
+      - su docker push 687804506828.dkr.ecr.us-east-1.amazonaws.com/javademo:latest
 artifacts:
   files:
     - target/demoforcicd-1.0-SNAPSHOT.jar
