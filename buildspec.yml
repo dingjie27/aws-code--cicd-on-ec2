@@ -3,20 +3,13 @@ version: 0.2
 phases:
   install:
     commands:
-      - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
-      - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR...
-      - $(aws ecr get-login --no-include-email --region us-east-1)
   build:
     commands:
       - echo Build started on `date`
       - mvn test
       - mvn package
-      - echo  start docker...
-      - docker build -t javademo .
-      - docker tag javademo:latest 687804506828.dkr.ecr.us-east-1.amazonaws.com/javademo:latest
   post_build:
     commands:
       - echo Build completed on `date`
