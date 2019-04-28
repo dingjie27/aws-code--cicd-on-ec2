@@ -20,7 +20,6 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - docker tag javademo:latest 687804506828.dkr.ecr.us-east-1.amazonaws.com/javademo:latest
 artifacts:
   files:
     - target/demoforcicd-1.0-SNAPSHOT.jar
