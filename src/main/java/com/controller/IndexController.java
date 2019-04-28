@@ -22,5 +22,9 @@ public class IndexController {
     public String getKeyFromRedis() {
         return elasticacheTool.getByKey();
     }
+    @GetMapping("/getreidskey")
+    public String getRedis() {
+        return elasticacheTool.getByKey();
+    }
 }
 
