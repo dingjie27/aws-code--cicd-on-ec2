@@ -5,6 +5,6 @@ files:
     destination: /home/ec2-user/
 hooks:
   ApplicationStart:
-    - location: start_server.sh > /dev/null 2> /dev/null < /dev/null &
+    - location: start_server.sh
       timeout: 30
       runas: root
