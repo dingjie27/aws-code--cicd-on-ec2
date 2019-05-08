@@ -13,7 +13,7 @@ public class IndexController {
     @GetMapping("/")
     public String getIndex() {
         System.out.println("server is up and the port is "+ port);
-        return "hello,this is a response from my web service!";
+        return "hello,this is a response from my web service, using ecs A!";
     }
 }
 
