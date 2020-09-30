@@ -1,4 +1,9 @@
 # codebuild系列java+ec2使用指南及buildspec.yml详解
+原创核心yml文件：
+1. 用于部署在EC2上的appsec文件：https://github.com/dingjie27/aws-code--cicd-on-ec2/blob/master/appspec.yml
+2. 用于进行编译的build文件：https://github.com/dingjie27/aws-code--cicd-on-ec2/blob/master/buildspec.yml
+3. 如需打包成镜像，还可以参考：https://github.com/dingjie27/aws-code--cicd-on-ec2/blob/master/Dockerfile
+
 https://github.com/dingjie27/demoforcicd/blob/master/buildspec.yml
 1、在codebuild中选择新建application，填写“Project name”。
 2、在source的选择中，可以选择git也可以选择code commit。第一次选择git的时候会让用户登陆git账户并对codebuild授权。git中的repository是自动生成的下来框，可以从中选择具体要build哪个项目。
